@@ -52,21 +52,20 @@ export const frontendIp = frontend.apply(
   status => status.loadBalancer.ingress[0].ip
 ); */
 
-const wordpress = new k8s.helm.v2.Chart(
-    "wpdev",
+const jenkins = new k8s.helm.v2.Chart(
+    "jenkinsdev",
     {
-      repo: "stable",
+      repo: "bitnami",
       version: "2.1.1",
-      chart: "jenkins"
+      chart: "jenkins",
+      values: {
+        jenkinsUsername: "admin",
+        jenkinsPassword: "selasdp2018!",
+        persistence: { storageClass: "gp2" }
+      }
     },
     { providers: { kubernetes: myk8s } }
   );
-  
-  // Export the public IP for Wordpress.
-  const frontend = wordpress.getResourceProperty(
-    "v1/Service",
-    "wpdev-wordpress",
-    "status"
-  );
-  export const frontendIp = frontend.apply(
-    status => status.loadBalancer.ingress[0].ip);
+
+  console.log("jenkins: ", jenkins);
+
