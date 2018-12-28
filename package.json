@@ -1,9 +1,11 @@
 {
-  "name": "webserver",
-  "version": "0.1.0",
-  "main": "index.js",
+  "name": "aws-ts-eks",
+  "devDependencies": {
+      "@types/node": "latest"
+  },
   "dependencies": {
-    "@pulumi/pulumi": "latest",
-    "@pulumi/aws": "latest"
+      "@pulumi/pulumi": "latest",
+      "@pulumi/aws-infra": "latest",
+      "@pulumi/eks": "latest"
   }
 }

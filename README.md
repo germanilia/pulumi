@@ -1,3 +1,1 @@
-This branch will demonstrate CD process using pulumi + jenkins pipeline over AWS.
-EC2 Linux WebServer Instance.
-.
+This branch will demonstrate deployment AWS EKS service, but this will work for any k8s cluster.
