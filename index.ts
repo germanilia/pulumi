@@ -26,7 +26,7 @@ const myk8s = new k8s.Provider("myk8s", {
   kubeconfig: cluster.kubeconfig.apply(JSON.stringify)
 });
 
-const wordpress = new k8s.helm.v2.Chart(
+/* const wordpress = new k8s.helm.v2.Chart(
   "wpdev",
   {
     repo: "stable",
@@ -35,7 +35,7 @@ const wordpress = new k8s.helm.v2.Chart(
     values: {
       wordpressUsername: "admin",
       wordpressPassword: "selasdp2018!",
-      mariadb: { mariadbRootPassword: "pulumi2018" },
+      mariadb: { enabled: false},
       persistence: { storageClass: "gp2" }
     }
   },
@@ -50,4 +50,23 @@ const frontend = wordpress.getResourceProperty(
 );
 export const frontendIp = frontend.apply(
   status => status.loadBalancer.ingress[0].ip
-);
+); */
+
+const wordpress = new k8s.helm.v2.Chart(
+    "wpdev",
+    {
+      repo: "stable",
+      version: "2.1.1",
+      chart: "jenkins"
+    },
+    { providers: { kubernetes: myk8s } }
+  );
+  
+  // Export the public IP for Wordpress.
+  const frontend = wordpress.getResourceProperty(
+    "v1/Service",
+    "wpdev-wordpress",
+    "status"
+  );
+  export const frontendIp = frontend.apply(
+    status => status.loadBalancer.ingress[0].ip);
