@@ -1,1 +1,2 @@
-This repository is for SELA SDP 2018, each branch contains a different example.
+Hello World pulumi example.
+Creates a serverless api on AWS using LAMBDA
