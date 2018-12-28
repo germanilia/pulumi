@@ -1,5 +1,7 @@
 import * as awsinfra from "@pulumi/aws-infra";
 import * as eks from "@pulumi/eks";
+import * as helm from "@pulumi/kubernetes/helm";
+import * as k8s from "@pulumi/kubernetes";
 
 // Create a VPC for our cluster.
 const vpc = new awsinfra.Network("vpc");
