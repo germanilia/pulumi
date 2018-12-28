@@ -1,1 +1,2 @@
-This repository is for SELA SDP 2018, each branch contains a different example.
+This branch will demonstrate CD process using pulumi + jenkins pipeline over AWS.
+EC2 Linux WebServer Instance
