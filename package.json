@@ -1,11 +1,11 @@
 {
-  "name": "aws-ts-eks",
-  "devDependencies": {
-      "@types/node": "latest"
-  },
-  "dependencies": {
-      "@pulumi/pulumi": "latest",
-      "@pulumi/aws-infra": "latest",
-      "@pulumi/eks": "latest"
-  }
+    "name": "aws-ts-eks",
+    "devDependencies": {
+        "@types/node": "latest"
+    },
+    "dependencies": {
+        "@pulumi/pulumi": "latest",
+        "@pulumi/aws-infra": "latest",
+        "@pulumi/eks": "latest"
+    }
 }
