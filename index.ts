@@ -5,7 +5,7 @@ const jenkins = new k8s.helm.v2.Chart("jenkinsdev", {
   version: "0.26.0",
   chart: "jenkins",
   values: {
-    Master: {AdminPassword: "admselasdp2018!in" },
+    Master: {AdminPassword: "password" },
     Persistence: { Enabled: false }
   }
 });
