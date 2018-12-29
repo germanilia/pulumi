@@ -8,8 +8,7 @@ let ami = "ami-6869aa05"; //us-east-1
 
 let group = new aws.ec2.SecurityGroup("web-secgrp", {
   ingress: [
-    { protocol: "tcp", fromPort: 22, toPort: 22, cidrBlocks: ["0.0.0.0/0"] },
-    { protocol: "tcp", fromPort: 80, toPort: 80, cidrBlocks: ["0.0.0.0/0"] }
+    { protocol: "tcp", fromPort: 22, toPort: 22, cidrBlocks: ["0.0.0.0/0"] }
   ]
 });
 
