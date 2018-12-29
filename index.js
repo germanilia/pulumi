@@ -5,7 +5,6 @@ const aws = require("@pulumi/aws");
 let size = "t2.micro"; // t2.micro is available in the AWS free tier
 
 let ami = "ami-6869aa05"; //us-east-1
-// let ami = "ami-0f65671a86f061fcd"; //us-east-2
 
 let group = new aws.ec2.SecurityGroup("web-secgrp", {
   ingress: [
