@@ -1,1 +1,1 @@
-This repository is for SELA SDP 2018, each branch contains a different example.
+This example shows how to convert tf code to pulumi.
